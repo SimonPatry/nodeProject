@@ -1,0 +1,11 @@
+extends layouts/header
+
+mixin field(type, name, placeholder)
+    .field
+        input(type=type, name=name, placeholder=placeholder, required=true)
+
+block content
+    form(method="post", action="/login")
+        +field('email', 'email', 'Email')
+        +field('password', 'password', 'Password')
+        button(type="submit") Login

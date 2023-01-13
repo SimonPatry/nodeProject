@@ -1,0 +1,13 @@
+extends layouts/header
+
+mixin field(type, name, placeholder)
+    .field
+        input(type=type, name=name, placeholder=placeholder, required=true)
+
+block content
+    form(method="post", action="/signIn")
+        +field('text', 'firstName', 'firstName')
+        +field('text', 'lastName', 'lastName')
+        +field('email', 'email', 'email')
+        +field('password', 'password', 'Password')
+        button(type="submit") Sign In
